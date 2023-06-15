@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/header.css">
+        <link rel="stylesheet" href="./css/footer.css">
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/modal.css">
+        <link rel="stylesheet" href="./css/alert.css">
+        <script src="./js/index.js" defer></script>
+        <script src="./js/modal.js" defer></script>
+        <script src="./js/storage.js" defer></script>
+        <!-- FONTES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500;600;700&display=swap" rel="stylesheet">
+        <!-- ICONS -->
+        <script src="https://kit.fontawesome.com/270e77764b.js" crossorigin="anonymous"></script>
+        
+        <title>GoTasks</title>
+    </head>
+    <body onload="fillTable()">
+        <header class="first-header">
+            <h1><a href="#">GoTasks</a></h1>
+        </header>
+        
+        <main class="container">
+            <header class="main-header">
+                <button class="btn-new-task" onclick="toggleModal()">Nova Tarefa</button>
+                <span class="total-tasks">
+                    <span id="count-tasks">0</span> Tarefas registradas
+                </span>
+            </header>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                   
+                </tbody>
+            </table>
+
+            <h3 id="loading-message">Carregando...</h3>
+
+            <div class="modal-background " id="modal">
+                <article class="modal-container">
+                    <h2 class="title">Criar nova tarefa</h2>
+                    <form id="form">
+                        <div class="form-group">
+                            <label for="description">Descrição da tarefa</label>
+                            <input type="text" placeholder="Descrição" id="description">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Data</label>
+                            <input type="date" placeholder="Descrição" id="date"  > 
+                        </div>
+
+                        
+                    </form>
+                    <div class="buttons-modal">
+                        <button class="btn-cancel" onclick="toggleModal()">Cancelar</button>
+                        <button class="btn-save" id="create-task">Salvar</button>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <div class="alert-container" id="alert">
+            <h2 class="alert-title">Ops...</h2>
+            <p class="alert-message"> Preencha todos os campos!</p>
+        </div>
+        
+
+
+        <footer>
+            <p>&copy;GoTasks, 2022.</p>
+        </footer>
+    </body>
+</html>
